@@ -5,8 +5,8 @@ import { getSiteMetaData } from "utils/helpers";
 import Layout from "components/Layout";
 import Bio from "components/Bio";
 import SEO from "components/Seo";
+import SocialFollow from "components/SocialFollow";
 import { getSortedTalks } from "utils/talks";
-import Image from "components/Image";
 
 export default function Home({ talks }) {
 
@@ -15,14 +15,13 @@ export default function Home({ talks }) {
 
   return (
     <Layout>
-      <SEO title="Talks" />
+      <SEO title="About" />
       <Bio className="my-14" />
 
       <div>
 
         <p className="mb-6">
-          Abderrahim SOUBAI-ELIDRISSI full stack JavaScript developer. I’m very interested in web Technologies & cloud computing & problem solving.
-
+          {siteMetadata.about}
 </p>
 
         <ul className="mb-6">
@@ -45,6 +44,8 @@ export default function Home({ talks }) {
         </p>
         
          </div>
+
+         <SocialFollow links={siteMetadata.social} />
 
 
     </Layout>

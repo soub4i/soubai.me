@@ -3,6 +3,7 @@
 
 - [ ] Add Sitemap
 - [ ] Add RSS Feed
+- [x] Add Social icons
 - [x] Add About page
 - [x] Add Talk page
 - [x] Infinity scroll

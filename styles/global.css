@@ -46,7 +46,7 @@ body.dark-mode .prose code, body.dark-mode .prose ul  li  strong{
 
 
 
-body.light-mode article p,  strong, body.light-mode ul  li ,body.light-mode h1 ,body.light-mode h2 ,body.light-mode h3 , body.light-mode h4   {
+body.light-mode p ,body.light-mode article p,  strong, body.light-mode ul  li ,body.light-mode h1 ,body.light-mode h2 ,body.light-mode h3 , body.light-mode h4   {
   color: #333 !important;
 }
 
@@ -112,4 +112,36 @@ input[type='checkbox'].dmcheck + label {
 .loading {
   text-align: center;
   
+}
+
+a.social {
+  margin: 0 1rem;
+  transition: transform 250ms;
+  display: inline-block;
+}
+
+a.social:hover {
+  transform: translateY(-2px);
+}
+
+a.youtube {
+  color: #eb3223;
+}
+
+a.facebook {
+  color: #4968ad;
+}
+
+a.twitter {
+  color: #49a1eb;
+}
+
+a.instagram {
+  color: #E1306C;
+}
+a.github {
+  color: black;
+}
+a.linkedin {
+  color: #0e76a8 ;
 }
