@@ -102,3 +102,7 @@ input[type='checkbox'].dmcheck + label {
 }
 
 
+.loading {
+  text-align: center;
+  
+}

@@ -12,5 +12,6 @@ export default {
       twitter: "soub4i",
       github: "soub4i",
     },
+    postPerPage: 3
   },
 };

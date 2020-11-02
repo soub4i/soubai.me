@@ -6,7 +6,7 @@ category: javascript
 date: 2020-10-29T01:00:00.000Z
 socialImage: media/86a7f523-c057-4da1-b17d-0c3da459d965.jpg
 description: Hello in this blog post I will try to demystify the web component concept for you
-draft: true
+draft: false
 tags:
   - javascript
   - web-component
