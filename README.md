@@ -3,7 +3,7 @@
 
 - [ ] Add Sitemap
 - [ ] Add RSS Feed
-- [ ] Add About page
+- [x] Add About page
 - [x] Add Talk page
 - [x] Infinity scroll
 - [x] Dark Mode

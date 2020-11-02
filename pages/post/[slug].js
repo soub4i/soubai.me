@@ -7,6 +7,7 @@ import Image from "components/Image";
 import SEO from "components/Seo";
 import { getPostBySlug, getPostsSlugs } from "utils/posts";
 import Bio from "components/Bio";
+import useDarkMode from 'use-dark-mode';
 
 const CodeBlock = ({ language, value }) => {
   return <SyntaxHighlighter language={language}>{value}</SyntaxHighlighter>;
@@ -23,6 +24,9 @@ const MarkdownImage = ({ alt, src }) => (
 );
 
 export default function Post({ post, frontmatter, nextPost, previousPost }) {
+
+  const darkMode = useDarkMode(false);
+
   return (
     <Layout>
       <SEO
@@ -41,13 +45,13 @@ export default function Post({ post, frontmatter, nextPost, previousPost }) {
             className="w-full"
           />
 
-          <h1 className="mb-2 text-6xl font-black leading-none font-display">
+          <h1 className="mb-2 text-6xl font-bold text-orange-600 leading-none font-display">
             {frontmatter.title}
           </h1>
           <p className="text-sm">{frontmatter.date}</p>
         </header>
         <ReactMarkdown
-          className="mb-4 prose-sm prose sm:prose lg:prose-lg"
+          className={"prose"}
           escapeHtml={false}
           source={post.content}
           renderers={{ code: CodeBlock, image: MarkdownImage }}

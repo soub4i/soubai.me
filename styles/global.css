@@ -34,16 +34,23 @@ body.light-mode {
 }
 body.dark-mode {
   background-color: #1a1919;
-  color: #999;
-}
-
-body.dark-mode article {
   color: #e2e8f0;
 }
 
-body.dark-mode article p, ul {
-  color: #e2e8f0;
+body.dark-mode article p,  strong, ul li ,p , h1 , h2 ,h3 ,h4 ,h5 , .prose h1, .prose h2, .prose h3 , .prose h4 , .prose strong , .prose li {
+  color: #e2e8f0 !important;
 }
+body.dark-mode .prose code, body.dark-mode .prose ul  li  strong{
+  color: #ffe600;
+}
+
+
+
+body.light-mode article p,  strong, body.light-mode ul  li ,body.light-mode h1 ,body.light-mode h2 ,body.light-mode h3 , body.light-mode h4   {
+  color: #333 !important;
+}
+
+
 .dark-mode-toggle {
   display: flex;
   margin: 0 auto;
