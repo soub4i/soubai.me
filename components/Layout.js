@@ -10,16 +10,13 @@ export default function Layout({ children }) {
     <div className="mb-2" style={{ display: "flex" }} >
       <ul className="flex">
         <li className="mr-6">
-          <Link href="/"><a className="font-black no-underline font-display" href="#">Home</a></Link>
+          <Link href="/"><a className={"font-black font-display " + (pathname === "/" ? 'underline' : ' no-underline')} href="#">Home</a></Link>
         </li>
         <li className="mr-6">
-          <Link href="/"><a className="font-black no-underline font-display" href="#">Talks</a></Link>
+          <Link href="/talks"><a className={"font-black  font-display " + (pathname === "/talks" ? 'underline' : ' no-underline')} href="#">Talks</a></Link>
         </li>
         <li className="mr-6">
-          <Link href="/"><a className="font-black no-underline font-display" href="#">Contact</a></Link>
-        </li>
-        <li className="mr-6">
-          <Link href="/"><a className="font-black no-underline font-display" href="#">About</a></Link>
+          <Link href="/about"><a className={"font-black font-display " + (pathname === "/about" ? 'underline' : 'no-underline')} href="#">About</a></Link>
         </li>
       </ul>
 
