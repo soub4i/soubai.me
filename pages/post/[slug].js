@@ -35,20 +35,20 @@ export default function Post({ post, frontmatter, nextPost, previousPost }) {
       />
 
       <article>
-        <header className="mb-8">
+        <header className="">
 
           <Image
             alt={frontmatter.title}
             src={require(`../../content/assets/${frontmatter.socialImage}`)}
             webpSrc={require(`../../content/assets/${frontmatter.socialImage}?webp`)}
             previewSrc={require(`../../content/assets/${frontmatter.socialImage}?lqip-colors`)}
-            className="w-full"
+            className="mb-8 w-full"
           />
-
-          <h1 className="mb-2 text-6xl font-bold text-orange-600 leading-none font-display">
-            {frontmatter.title}
-          </h1>
-          <p className="text-sm">{frontmatter.date}</p>
+          <div className="mb-6 ">
+            <h1 className="text-2xl font-bold text-orange-600 leading-none font-display">
+              {frontmatter.title}
+            </h1>
+            <p className="text-sm">{frontmatter.date}</p></div>
         </header>
         <ReactMarkdown
           className={"prose"}

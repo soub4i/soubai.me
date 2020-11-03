@@ -44,9 +44,13 @@ body.dark-mode .prose code, body.dark-mode .prose ul  li  strong{
   color: #ffe600;
 }
 
+body.dark-mode li ,body.dark-mode strong  ,  body.dark-mode .prose h1 ,   body.dark-mode .prose h2 ,  body.dark-mode .prose h3  {
+  color: #e2e8f0 !important;
+}
 
 
-body.light-mode p ,body.light-mode article p,  strong, body.light-mode ul  li ,body.light-mode h1 ,body.light-mode h2 ,body.light-mode h3 , body.light-mode h4   {
+
+body.light-mode p,prose h1, .prose h2, .prose h3 , .prose h4 , .prose strong , .prose li ,body.light-mode article p,  strong, body.light-mode ul  li ,body.light-mode h1 ,body.light-mode h2 ,body.light-mode h3 , body.light-mode h4   {
   color: #333 !important;
 }
 

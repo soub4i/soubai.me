@@ -51,7 +51,7 @@ export default function Home({ posts }) {
       <Bio className="my-14" />
       {postList.map(({ frontmatter: { title, description, date, socialImage, category, tags }, slug }) => (
         <article className="mb-14" key={slug}>
-          <header className="mb-2">
+          <header className="mb-6">
 
             {socialImage ? <Image
               alt={title}
@@ -73,7 +73,7 @@ export default function Home({ posts }) {
               <div>
 
                 <Link href={"/post/[slug]"} as={`/post/${slug}`}>
-                  <a className="text-4xl font-bold text-orange-600 font-display">
+                  <a className="text-2xl font-bold text-orange-600 font-display">
                     {title}
                   </a>
                 </Link>

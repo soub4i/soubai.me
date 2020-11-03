@@ -60,19 +60,16 @@ export default function Home({ talks }) {
               previewSrc={require(`../content/assets/${socialImage}?lqip-colors`)}
               className="w-full"
             /> : ''}
-            <h3 className="mb-2">
+            <h3 className="mt-4 mb-6">
               <div className="mt-2">
 
-
+                <small className="mr-2 text-sm">{date} - {' '}
+                  <Link href="/"><a className="" href={conferenceLink}>{conference}</a></Link> ({location})</small>
               </div>
-              <span className="mr-2 text-sm">{date}</span> -
-              <Link href="/"><a className="" href={conferenceLink}>{conference}</a></Link> ({location})
-
               <div>
-
-                <h2 className="text-4xl font-bold text-orange-600 font-display">
-                  {title}
-                </h2>
+                <h1 className="text-2xl font-bold text-orange-600 font-display">
+                  <a> {title}</a>
+                </h1>
               </div>
 
             </h3>
