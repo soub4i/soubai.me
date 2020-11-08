@@ -16,6 +16,9 @@ export default function Layout({ children }) {
           <Link href="/talks"><a className={"font-black  font-display " + (pathname === "/talks" ? 'underline' : ' no-underline')} href="#">Talks</a></Link>
         </li>
         <li className="mr-6">
+          <Link href="/oss"><a className={"font-black  font-display " + (pathname === "/oss" ? 'underline' : ' no-underline')} href="#">OSS</a></Link>
+        </li>
+        <li className="mr-6">
           <Link href="/about"><a className={"font-black font-display " + (pathname === "/about" ? 'underline' : 'no-underline')} href="#">About</a></Link>
         </li>
       </ul>
