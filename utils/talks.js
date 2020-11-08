@@ -1,5 +1,6 @@
 import matter from "gray-matter";
 import fs from "fs";
+import { getFormattedDate } from "utils/helpers";
 
 export function getTalksFolders() {
   // Get all posts folders located in `content/posts`
@@ -13,12 +14,7 @@ export function getTalksFolders() {
   return postsFolders;
 }
 
-function getFormattedDate(date) {
-  const options = { year: "numeric", month: "long", day: "numeric" };
-  const formattedDate = date.toLocaleDateString("en-US", options);
 
-  return formattedDate;
-}
 export function getSortedTalks() {
   const talkFolders = getTalksFolders();
   const talks = talkFolders

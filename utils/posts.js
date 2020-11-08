@@ -1,5 +1,6 @@
 import matter from "gray-matter";
 import fs from "fs";
+import { getFormattedDate } from "utils/helpers";
 
 export function getPostsFolders() {
   // Get all posts folders located in `content/posts`
@@ -11,14 +12,6 @@ export function getPostsFolders() {
     }));
 
   return postsFolders;
-}
-
-// Get day in format: Month day, Year. e.g. April 19, 2020
-function getFormattedDate(date) {
-  const options = { year: "numeric", month: "long", day: "numeric" };
-  const formattedDate = date.toLocaleDateString("en-US", options);
-
-  return formattedDate;
 }
 
 export function getSortedPosts() {
