@@ -3,7 +3,7 @@
 draft: false
 owner: abderrahimsoubaielidrissi
 repos: 
-    - spotifyjs
+    - spotify-js
     - use-wikipedia
     - web-merge
     - moroccan-git
