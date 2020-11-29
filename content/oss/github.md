@@ -3,6 +3,8 @@
 draft: false
 owner: abderrahimsoubaielidrissi
 repos: 
+    - spotifyjs
+    - use-wikipedia
     - web-merge
     - moroccan-git
     - figma-tailwindcss-config-plugin
