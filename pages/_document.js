@@ -8,7 +8,20 @@ export default class MyDocument extends Document {
 
     return (
       <Html lang={siteMetadata.language}>
-        <Head />
+        <Head>
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${siteMetadata.gaId}`}></script>
+
+<script
+    dangerouslySetInnerHTML={{
+      __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', ${siteMetadata.gaId});
+        `,
+    }}
+  />
+        </Head>
         <body>
           <script src="noflash.js" />
 

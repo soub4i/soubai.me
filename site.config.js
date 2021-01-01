@@ -17,6 +17,7 @@ export default {
       instagram: "the4rchitect",
       youtube: "channel/UCDJ58dqNd2I0KYxz4KkAKKg",
     },
-    postPerPage: 3
+    postPerPage: 3,
+    gaId: "UA-155019850-1"
   },
 };
