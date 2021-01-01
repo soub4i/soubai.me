@@ -10,9 +10,9 @@ export default function Bio({ className }) {
     <div className={clsx(`flex items-center`, className)}>
       <Image
         className="flex-shrink-0 mb-0 mr-3 rounded-full w-14 h-14"
-        src={`https://twivatar.glitch.me/${social.twitter}`}
-        webpSrc={`https://twivatar.glitch.me/${social.twitter}?webp`}
-        previewSrc={`https://twivatar.glitch.me/${social.twitter}?lqip-colors`}
+        src={`https://github.com/${social.github}.png`}
+        webpSrc={`https://github.com/${social.github}.png?webp`}
+        previewSrc={`https://github.com/${social.github}.png?lqip-colors`}
         alt="Profile"
       />
       <p className="text-base leading-7">
