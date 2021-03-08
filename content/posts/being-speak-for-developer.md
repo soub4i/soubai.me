@@ -10,7 +10,7 @@ tags:
   - "public-speaking"
   - "conference"
   - "talk"
-description: "A pattern is a reusable solution that can be applied to commonly occurring problems in software design"
+description: "2019 was a very exciting year for me it’s the year when I made my first official public speaking..."
 socialImage: "media/IMG_20200513_003649-min.jpg"
 ---
 
