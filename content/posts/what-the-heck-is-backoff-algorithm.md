@@ -44,9 +44,9 @@ const wait = (duration) => new Promise((res) => setTimeout(res, duration));
 // retry is a function that takes  maxAttempts (number of allow retries) , a callback (function to repeat) and a delay (time in ms)
 
 const retry = (maxAttempts, cb, delay = 500) =>
-  fn().catch((err) =>
+  cb().catch((err) =>
     maxAttempts > 1
-      ? wait(delay).then(() => retry(maxAttempts - 1, fn, delay * 2)) // *2 is the exponential rate
+      ? wait(delay).then(() => retry(maxAttempts - 1, cb, delay * 2)) // *2 is the exponential rate
       : Promise.reject(err)
   );
 ```
