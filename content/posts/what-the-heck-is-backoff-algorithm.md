@@ -46,7 +46,7 @@ const wait = (duration) => new Promise((res) => setTimeout(res, duration));
 const retry = (maxAttempts, cb, delay = 500) =>
   fn().catch((err) =>
     maxAttempts > 1
-      ? pause(delay).then(() => backoff(maxAttempts - 1, fn, delay * 2)) // *2 is the exponential rate
+      ? wait(delay).then(() => retry(maxAttempts - 1, fn, delay * 2)) // *2 is the exponential rate
       : Promise.reject(err)
   );
 ```
