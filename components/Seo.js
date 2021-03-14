@@ -26,6 +26,7 @@ export default function SEO({ title, description = "", socialImage }) {
       <link rel="icon" type="image/png" href="/static/favicon.ico" />
       <link rel="apple-touch-icon" href="/static/favicon.ico" />
       <meta property="og:image" content={`${siteMetadata.url}${socialImage}`} />
+      <meta property="twitter:image" content={`${siteMetadata.url}${socialImage}`} />
     </Head>
   );
 }
