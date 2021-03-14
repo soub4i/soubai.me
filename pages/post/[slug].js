@@ -16,9 +16,9 @@ const CodeBlock = ({ language, value }) => {
 const MarkdownImage = ({ alt, src }) => (
   <Image
     alt={alt}
-    src={require(`../../content/assets/${src}`)}
-    webpSrc={require(`../../content/assets/${src}?webp`)}
-    previewSrc={require(`../../content/assets/${src}?lqip-colors`)}
+    src={`/${src}`}
+    webpSrc={`/${src}?webp`}
+    previewSrc={`/${src}?lqip-colors`}
     className="w-full"
   />
 );
@@ -31,6 +31,7 @@ export default function Post({ post, frontmatter, nextPost, previousPost }) {
     <Layout>
       <SEO
         title={frontmatter.title}
+        socialImage={frontmatter.socialImage}
         description={frontmatter.description || post.excerpt}
       />
 
@@ -39,9 +40,9 @@ export default function Post({ post, frontmatter, nextPost, previousPost }) {
 
           <Image
             alt={frontmatter.title}
-            src={require(`../../content/assets/${frontmatter.socialImage}`)}
-            webpSrc={require(`../../content/assets/${frontmatter.socialImage}?webp`)}
-            previewSrc={require(`../../content/assets/${frontmatter.socialImage}?lqip-colors`)}
+            src={`/${frontmatter.socialImage}`}
+            webpSrc={`/${frontmatter.socialImage}?webp`}
+            previewSrc={`/${frontmatter.socialImage}?lqip-colors`}
             className="mb-8 w-full"
           />
           <div className="mb-6 ">

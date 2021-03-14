@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { getSiteMetaData } from "utils/helpers";
 
-export default function SEO({ title, description = "" }) {
+export default function SEO({ title, description = "", socialImage }) {
   const siteMetadata = getSiteMetaData();
 
   const metaDescription = description || siteMetadata.description;
@@ -25,6 +25,7 @@ export default function SEO({ title, description = "" }) {
       <meta name="twitter:creator" content={siteMetadata.social.twitter} />
       <link rel="icon" type="image/png" href="/static/favicon.ico" />
       <link rel="apple-touch-icon" href="/static/favicon.ico" />
+      <meta property="og:image" content={`${siteMetadata.url}${socialImage}`} />
     </Head>
   );
 }
