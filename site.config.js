@@ -1,6 +1,7 @@
 export default {
   siteMetadata: {
     title: "Soubai's stories",
+    url: "https://soubai.me/",
     author: {
       name: "Abderrahim SOUBAI-ELIDRISI",
       summary: " full stack JavaScript developer. Interested in web Technologies & cloud computing & problem solving.",

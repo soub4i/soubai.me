@@ -55,9 +55,9 @@ export default function Home({ posts }) {
 
             {socialImage ? <Image
               alt={title}
-              src={require(`../content/assets/${socialImage}`)}
-              webpSrc={require(`../content/assets/${socialImage}?webp`)}
-              previewSrc={require(`../content/assets/${socialImage}?lqip-colors`)}
+              src={`/${socialImage}`}
+              webpSrc={`/${socialImage}?webp`}
+              previewSrc={`/${socialImage}?lqip-colors`}
               className="w-full"
             /> : ''}
             <h3 className="mb-2">
