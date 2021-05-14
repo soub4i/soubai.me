@@ -28,10 +28,6 @@ export default function SocialFollow({ links }) {
             className="linkedin social">
             <FontAwesomeIcon icon={faLinkedinIn} size="2x" />
         </a>
-        <a target="_blank" href={`https://facebook.com/${facebook}`}
-            className="facebook social">
-            <FontAwesomeIcon icon={faFacebook} size="2x" />
-        </a>
         <a target="_blank" href={`https://twitter.com/${twitter}`}
             className="twitter social">
             <FontAwesomeIcon icon={faTwitter} size="2x" />
