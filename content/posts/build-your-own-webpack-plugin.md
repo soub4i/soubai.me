@@ -35,7 +35,7 @@ Like loaders plugins can be added via `npm` and should be configurated using `we
 
 # Let’s code
 
-Webpack plugin is just a javascript class with _apply_ method this method take `compiler` instance as a parameter so we can use `compiler.plugin` to register our custom logic based on a particular webpack compiler event so our plugin will be something like:
+Webpack plugin is just a javascript class with _apply_ method this method take `compiler` instance as a parameter so we can use `compiler.hooks.*` to register our custom logic based on a particular webpack compiler event (here we listen to `done`) so our plugin will be something like:
 
 ```js
 // ./plugin/super-plugin.js
@@ -83,7 +83,7 @@ you can try plugin by running package.json _dev_ script: `yarn dev`
 
 ```
 
-let's code something useful a plugin that give use the size of the output file :
+let's code something useful a plugin that give us the size of the output file :
 
 ```js
 // ./plugin/super-plugin.js
