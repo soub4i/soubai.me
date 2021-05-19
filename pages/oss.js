@@ -17,7 +17,7 @@ export default function Oss({ projects }) {
         const gitRepos = await Promise.all(reposPromises);
         setRepos(gitRepos.map(r => r.data))
 
-    }, [repos])
+    }, [])
 
     var badgeClasses = [
         'btn-inline-block'
