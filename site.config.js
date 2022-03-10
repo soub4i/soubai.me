@@ -12,7 +12,7 @@ export default {
     language: "en-US",
     social: {
       twitter: "soub4i",
-      github: "AbderrahimSoubaiElidrissi",
+      github: "soub4i",
       linkedin: "soubai",
       facebook: "zizwar0nline",
       instagram: "the4rchitect",
