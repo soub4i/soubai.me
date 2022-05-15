@@ -4,9 +4,11 @@ export default {
     url: "https://soubai.me/",
     author: {
       name: "Abderrahim SOUBAI-ELIDRISI",
-      summary: " full stack JavaScript developer. Interested in web Technologies & cloud computing & problem solving.",
+      summary:
+        "A Homosapien with affinity to machines. Interested in Web Technologies & Cloud",
     },
-    description: "full stack JavaScript developer. I’m very interested in web Technologies & cloud computing & problem solving.",
+    description:
+      "A Software engineer with a passion for building software that improves the world. I love to learn new things and I'm always looking for new challenges.",
     about: `My main passion as a web developer is to create memorable projects that deal with real-world problems and meet the needs of the business.`,
     siteUrl: "https://nextjs-starter-blog-demo.netlify.app/",
     language: "en-US",
@@ -19,6 +21,6 @@ export default {
       youtube: "channel/UCDJ58dqNd2I0KYxz4KkAKKg",
     },
     postPerPage: 3,
-    gaId: "UA-155019850-1"
+    gaId: "UA-155019850-1",
   },
 };

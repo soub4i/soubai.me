@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef } from "react";
 import { getSiteMetaData } from "utils/helpers";
 
 import Layout from "components/Layout";
@@ -9,9 +9,7 @@ import SocialFollow from "components/SocialFollow";
 import { getSortedTalks } from "utils/talks";
 
 export default function Home({ talks }) {
-
   const siteMetadata = getSiteMetaData();
-
 
   return (
     <Layout>
@@ -19,35 +17,36 @@ export default function Home({ talks }) {
       <Bio className="my-14" />
 
       <div>
-
-        <p className="mb-6">
-          {siteMetadata.about}
-</p>
+        <p className="mb-6">{siteMetadata.about}</p>
 
         <ul className="mb-6">
-          <li>I’m CTO @<Link href="https://geekhub.ma/"><a target="_blank">Geekhub</a></Link>
-          </li>
-          <li>Facebook developer cricle co-lead Marrakech (<Link href="https://web.facebook.com/groups/DevC.Marrakech"> 
-          <a target="_blank">Group</a>
-          </Link>)
-</li>
-          <li>Currently I’m working for PULSE.digital as a Technical lead | Cloud Architect.
-        
+          <li>
+            Host of{" "}
+            <Link href="https://s7aba.ma">
+              <a target="_blank">S7aba podcast</a>
+            </Link>
           </li>
 
-        </ul> 
-        
+          <li>
+            Facebook developer cricle co-lead Marrakech (
+            <Link href="https://web.facebook.com/groups/DevC.Marrakech">
+              <a target="_blank">Group</a>
+            </Link>
+            )
+          </li>
+        </ul>
+
         <p className="mb-6">
-        <small>For business inquiries feel free to get in touch with me on <Link href="https://www.linkedin.com/in/soubai/"><a target="_blank">Linkedin</a></Link>
-            </small>
-
+          <small>
+            For business inquiries feel free to get in touch with me on{" "}
+            <Link href="https://www.linkedin.com/in/soubai/">
+              <a target="_blank">Linkedin</a>
+            </Link>
+          </small>
         </p>
-        
-         </div>
+      </div>
 
-         <SocialFollow links={siteMetadata.social} />
-
-
+      <SocialFollow links={siteMetadata.social} />
     </Layout>
   );
 }

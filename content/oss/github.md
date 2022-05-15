@@ -3,6 +3,7 @@
 draft: false
 owner: abderrahimsoubaielidrissi
 repos:
+  - hermes-ci
   - react-spotifycode
   - spotify-js
   - use-wikipedia
