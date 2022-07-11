@@ -5,7 +5,7 @@ export default {
     author: {
       name: "Abderrahim SOUBAI-ELIDRISI",
       summary:
-        "A Homosapien with affinity to machines. Interested in Web Technologies & Cloud",
+        "Homosapien with high affinity to machines. Interested in Web Technologies & Cloud",
     },
     description:
       "A Software engineer with a passion for building software that improves the world. I love to learn new things and I'm always looking for new challenges.",
