@@ -1,8 +1,9 @@
 ---
 # date: 2020-10-17T01:00:00.000Z
 draft: false
-owner: abderrahimsoubaielidrissi
+owner: soub4i
 repos:
+  - kubestatus
   - hermes-ci
   - react-spotifycode
   - spotify-js

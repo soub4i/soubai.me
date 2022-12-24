@@ -38,7 +38,7 @@ export default function Oss({ projects }) {
             <Bio className="my-14" />
             { repos.map(({ id, description, name, stargazers_count, html_url, archived }) =>
 
-                <div key={id} className=" rounded overflow-hidden shadow-lg my-8 w-full">
+                <div key={name} className=" rounded overflow-hidden shadow-lg my-8 w-full">
                     <div className="px-6 py-4">
                         <div className="font-bold text-xl mb-2">{name}</div>
                         <p className="text-gray-700 text-base">
