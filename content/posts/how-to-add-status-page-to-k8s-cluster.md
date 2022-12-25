@@ -50,7 +50,14 @@ There are two ways to install; via `helm` chart
 helm repo add kubestatus https://soub4i.github.io/kubestatus
 ```
 
-And than install chart and update the `ConfigMap` key `services` with the value: `Web app=nginx-service.default;` because the definition of Kubetatus is LABEL=SERVICE.NAMESPACE:HEALTH_CHECK_ENDPOINT; (LABEL: `Web app`, SERVICE.NAMESPACE: `nginx-service.default`, HEALTH_CHECK_ENDPOINT: null (kubestatus will use default `/`) )
+And than install chart and update the `ConfigMap` key `services` with the value: `Web app=nginx-service.default;` because the definition of Kubetatus is `LABEL=SERVICE.NAMESPACE:HEALTH_CHECK_ENDPOINT;`
+
+LABEL: `Web app`, SERVICE.NAMESPACE: `nginx-service.default`
+
+- **LABEL**: is the name of the service that will be displayed in status page
+- **SERVICE_NAME**: is Kubernetes service name
+- **HEALTH_CHECK_ENDPOINT**: if defined the endpoint will be used by Kubestatus to check health of your service. Default value is **/**
+
 
 ```console
  helm install kubestatus kubestatus/kubestatus --set services="Web app=nginx-service;" --namespace kubestatus --create-namespace --wait
