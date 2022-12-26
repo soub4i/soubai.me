@@ -1,5 +1,5 @@
 ---
-title: How to add status page to k8s your cluster using kubestatus
+title: How to add status page to your k8s cluster using kubestatus
 date: 2022-12-25T06:40:32.169Z
 template: "post"
 draft: false
