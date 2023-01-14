@@ -36,15 +36,5 @@
     "gray-matter": "^4.0.2",
     "tailwindcss": "^1.9.6"
   },
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Jfelix61/nextjs-starter-blog.git"
-  },
-  "homepage": "https://github.com/Jfelix61/nextjs-starter-blog#readme",
-  "keywords": [
-    "next.js",
-    "blog",
-    "template"
-  ]
+  "license": "MIT"
 }

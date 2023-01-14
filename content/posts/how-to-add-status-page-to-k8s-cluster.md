@@ -1,6 +1,6 @@
 ---
 title: How to add status page to your k8s cluster using kubestatus
-date: 2022-12-25T06:40:32.169Z
+date: 2023-01-14T06:40:32.169Z
 template: "post"
 draft: false
 slug: "how-to-add-status-page-to-k8s-cluster-kubestatus"
@@ -44,24 +44,43 @@ Kubestatus can be used to quickly identify problems or issues with your cluster'
 
 ### install Kubestatus: 
 
-There are two ways to install; via `helm` chart
+
+#### Using helm:
+
+
+You can install Kubestatus via `helm` chart
 
 ```console
 helm repo add kubestatus https://soub4i.github.io/kubestatus
 ```
 
-And than install chart and update the `ConfigMap` key `services` with the value: `Web app=nginx-service.default;` because the definition of Kubetatus is `LABEL=SERVICE.NAMESPACE:HEALTH_CHECK_ENDPOINT;`
+You may need sometime to update your repo list:
+```console
+helm repo update
+```
 
-LABEL: `Web app`, SERVICE.NAMESPACE: `nginx-service.default`
-
-- **LABEL**: is the name of the service that will be displayed in status page
-- **SERVICE_NAME**: is Kubernetes service name
-- **HEALTH_CHECK_ENDPOINT**: if defined the endpoint will be used by Kubestatus to check health of your service. Default value is **/**
-
+After install the chart on namespace `kubestatus` 
 
 ```console
- helm install kubestatus kubestatus/kubestatus --set services="Web app=nginx-service;" --namespace kubestatus --create-namespace --wait
+helm install kubestatus kubestatus/kubestatus --set namespace="default" --n kubestatus --create-namespace --wait
 ```
+
+
+#### Using kubectl:
+
+Clone the repo:
+
+```console
+git clone https://github.com/soub4i/kubestatus
+cd kubestatus
+```
+Create k8s resources:
+
+```console
+kubectl create -f kubestatus.yaml
+```
+
+
 
 Check the creation of resources under the namespace `kubestatus` 
 
@@ -69,34 +88,20 @@ Check the creation of resources under the namespace `kubestatus`
 kubectl get all -n kubestatus
 ```
 
-If you don't have `Helm` you can always do everything by yourself using `kubectl`. 
-
-Start by cloning the project
-
-```console
-git clone https://github.com/soub4i/kubestatus
-```
-Edit the manifest file. Go to the `ConfigMap` section
-
-```console
-nano ./kubestatus.yaml
-```
-Add this two lines
-```yaml
-  services: |
-    Web app=nginx-service.default;
-```
-
-Save and apply  the `kubestatus.yaml`
-
-```console
-kubectl apply -f ./kubestatus.yaml
-```
-
-
 ![](media/kubestatus-2.png)
 
 
+### Configuration 
+
+
+In order to run Kubestatus on your Kubernetes cluster quickly, You need to:
+
+- Tell Kubestatus the namespace to watch for that edit `ConfigMap` and update `namespace` value (`--set namespace="default"`)
+- Tell Kubestatus the services to watch for that add annotation `kubestatus/watch='true'` to desired services:
+
+```console
+kubectl annotate svc my-service-name kubestatus/watch='true'
+```
 
 ## Adding some resources for the demo
 
@@ -143,6 +148,12 @@ spec:
   ports:
   - port: 80
 EOF
+```
+
+Add annotation to `nginx-service`:
+
+```console
+kubectl annotate svc nginx-service kubestatus/watch='true'
 ```
 
 
