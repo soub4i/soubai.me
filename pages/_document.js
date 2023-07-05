@@ -10,8 +10,8 @@ export default class MyDocument extends Document {
       <Html lang={siteMetadata.language}>
         <Head>
         <script async src={`https://www.googletagmanager.com/gtag/js?id=${siteMetadata.gaId}`}></script>
-        <a rel="me" href="https://mastodon.social/@soubai">Mastodon</a>
-<script
+        <a style={{display:"none"}} rel="me" href="https://mastodon.social/@soubai">Mastodon</a>
+        <script
     dangerouslySetInnerHTML={{
       __html: `
             window.dataLayer = window.dataLayer || [];
