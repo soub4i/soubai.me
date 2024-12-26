@@ -24,7 +24,7 @@ Speaking of AI, I initially panicked like many others when witnessing the early 
 
 My initial understanding of AI was also misconceived. What we currently have are Large Language Models trained on vast datasets. These systems can't genuinely innovate solutions to complex challenges like climate change or faster-than-light travel.
 
-Losing my job during an economic downturn led me to examine how deeply I'd tied my profession to my identity and self-worth. Here, I must recommend "Status Anxiety" by Alain de Botton-it helped me separate professional achievement from personal value.
+Losing my job during an economic downturn led me to examine how deeply I'd tied my profession to my identity and self-worth. Here, I must recommend "Status Anxiety" by Alain de Botton, it helped me separate professional achievement from personal value.
 
 
 > “Hell, there are no rules here - we're trying to accomplish something.” - Thomas Edison
@@ -34,7 +34,7 @@ Recent events in the Moroccan tech community (particularly on Twitter) revealed 
 
 A tech community is, by definition, "a group of individuals united by their passion for technology." Claiming ownership or special privileges over such a collective is fundamentally misguided. Moreover, attacking those who disagree with your narrative reveals a deeper issue.
 
-Communities, like natural systems, thrive when they maintain healthy core values and clear leadership rotation. No individual should hold permanent advantages survival depends on merit and contribution.
+Communities, like natural systems, thrive when they maintain healthy core values and clear leadership rotation. No individual should hold permanent advantages. Survival depends on merit and contribution.
 
 
 > “Talk is cheap. Show me the code.” - Linus Torvalds
