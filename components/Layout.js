@@ -32,7 +32,7 @@ export default function Layout({ children }) {
       <header>{header}</header>
       <main>{children}</main>
       <footer className="text-lg font-light">
-        © {new Date().getFullYear()}, Built with ❤️
+        © {new Date().getFullYear()}
       </footer>
     </div>
   );

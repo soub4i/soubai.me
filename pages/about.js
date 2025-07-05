@@ -19,21 +19,13 @@ export default function Home({ talks }) {
       <div>
         <p className="mb-6">{siteMetadata.about}</p>
 
-        <ul className="mb-6">
+        <ul className="mb-6  text-sm">
           <li>
             Host of{" "}
             <Link href="https://s7aba.ma">
               <a target="_blank">S7aba podcast</a>
             </Link>
-          </li>
-
-          <li>
-            Facebook developer cricle co-lead Marrakech (
-            <Link href="https://web.facebook.com/groups/DevC.Marrakech">
-              <a target="_blank">Group</a>
-            </Link>
-            )
-          </li>
+          </li>  
         </ul>
 
         <p className="mb-6">

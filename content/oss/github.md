@@ -3,7 +3,7 @@
 draft: false
 owner: soub4i
 repos:
-  - kubestatus
+  - kubestatus-operator
   - hermes-ci
   - react-spotifycode
   - spotify-js

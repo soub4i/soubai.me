@@ -5,19 +5,19 @@ export default {
     author: {
       name: "Abderrahim SOUBAI-ELIDRISI",
       summary:
-        "Homosapien with high affinity to machines. Interested in Web Technologies & Cloud",
+        "Homosapien with high affinity for machines. Interested in science and philosophy",
     },
     description:
-      "A Software engineer with a passion for building software that improves the world. I love to learn new things and I'm always looking for new challenges.",
-    about: `My main passion as a web developer is to create memorable projects that deal with real-world problems and meet the needs of the business.`,
+      "A Software engineer (interested in cloud computing and distributed systems.) with a passion for building software that improves the world. I love to learn new things and I'm always looking for new challenges.",
+    about: `A Software engineer (interested in cloud computing and distributed systems.) with a passion for building software that improves the world. I love to learn new things and I'm always looking for new challenges.`,
     siteUrl: "https://nextjs-starter-blog-demo.netlify.app/",
     language: "en-US",
     social: {
       twitter: "soub4i",
       github: "soub4i",
       linkedin: "soubai",
-      facebook: "zizwar0nline",
-      instagram: "the4rchitect",
+      // facebook: "zizwar0nline",
+      instagram: "soub4i",
       youtube: "channel/UCDJ58dqNd2I0KYxz4KkAKKg",
     },
     postPerPage: 3,
