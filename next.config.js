@@ -2,6 +2,18 @@
 const withPlugins = require('next-compose-plugins');
 const optimizedImages = require('next-optimized-images');
 
+const nextConfig = {
+    // Add transpilePackages to handle ESM modules
+    transpilePackages: ['html-to-react', 'htmlparser2', 'domelementtype', 'domutils'],
+    
+    // Use output: 'export' instead of next export command
+    output: 'export',
+    trailingSlash: true,
+    images: {
+        unoptimized: true, // Required for static export
+    },
+};
+
 module.exports = withPlugins([
     [optimizedImages, {
         // these are the default values so you don't have to provide them if they are good enough for your use-case.
@@ -32,4 +44,4 @@ module.exports = withPlugins([
             quality: 75,
         },
     }],
-]);
+], nextConfig);

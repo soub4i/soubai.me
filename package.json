@@ -8,6 +8,12 @@
     "build": "next build",
     "start": "next start"
   },
+  "resolutions": {
+    "htmlparser2": "^6.1.0"
+  },
+  "overrides": {
+    "htmlparser2": "^6.1.0"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-brands-svg-icons": "^5.15.1",
