@@ -3,6 +3,7 @@
 draft: false
 owner: soub4i
 repos:
+  - lghnay
   - kubestatus-operator
   - hermes-ci
   - react-spotifycode
