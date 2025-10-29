@@ -9,7 +9,7 @@ tags:
   - "internet"
   - "social media"
   - "culture"
-description: "On the erosion of intellectual rigor in an era where algorithms reward confidence over expertise and speed over accuracy"
+description: "On the erosion of intellectualism in an era where algorithms reward confidence over expertise and speed over accuracy"
 socialImage: "media/p.png"
 ---
 
