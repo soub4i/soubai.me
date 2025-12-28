@@ -25,7 +25,7 @@ export default function CommandInterface() {
   const [showTerminal, setShowTerminal] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const [matrixTrigger, setMatrixTrigger] = useState(0);
-  const [currentTheme, setCurrentTheme] = useState('light');
+  const [currentTheme, setCurrentTheme] = useState('dark');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
