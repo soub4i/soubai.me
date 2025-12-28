@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function About() {
   return (
     <div className="max-w-6xl mx-auto px-3 md:px-4 py-6 md:py-8">
-      <TerminalBio />
+      {/* <TerminalBio /> */}
 
       <div className="bg-terminal-bg-secondary border-2 border-terminal-border shadow-lg p-4 md:p-8 mt-6 md:mt-8 rounded-lg">
         <div className="flex items-center justify-between mb-4 pb-2 border-b border-terminal-border">
