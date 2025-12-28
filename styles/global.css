@@ -2,150 +2,192 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-a {
-  @apply text-neon-orange;
+/* Terminal Theme CSS Variables */
+:root {
+  --terminal-bg: #1a1a1a;
+  --terminal-bg-secondary: #2a2a2a;
+  --terminal-text: #ffffff;
+  --terminal-text-secondary: #e5e5e5;
+  --terminal-accent: #ffb347;
+  --terminal-border: #404040;
+  --terminal-cursor: #ffb347;
+  --terminal-shadow: rgba(255, 179, 71, 0.15);
 }
 
-a:hover {
-  @apply underline;
+[data-theme="light"] {
+  --terminal-bg: #f8f9fa;
+  --terminal-bg-secondary: #ffffff;
+  --terminal-text: #1a1a1a;
+  --terminal-text-secondary: #6b7280;
+  --terminal-accent: #d97706;
+  --terminal-border: #e5e7eb;
+  --terminal-cursor: #d97706;
+  --terminal-shadow: rgba(217, 119, 6, 0.1);
 }
 
-span,
-p {
-  @apply font-light;
+/* Base terminal styles */
+body {
+  background-color: var(--terminal-bg);
+  color: var(--terminal-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Styles for lazy loaded images */
+/* Terminal cursor animation */
+.terminal-cursor::after {
+  content: '|';
+  animation: blink 1s infinite;
+  color: var(--terminal-cursor);
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Matrix rain animation */
+@keyframes matrix-fall {
+  0% {
+    transform: translateY(-100vh);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+.animate-matrix-fall {
+  animation: matrix-fall linear infinite;
+}
+
+/* Fade animations */
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fade-out {
+  0% { opacity: 0.95; }
+  50% { opacity: 0.8; }
+  100% { opacity: 0; }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-in;
+}
+
+.animate-fade-out {
+  animation: fade-out 1.5s ease-out;
+}
+
+/* Typing animation */
+.typing-animation {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid var(--terminal-cursor);
+  animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: var(--terminal-cursor); }
+}
+
+/* Image lazy loading styles */
 .blur-up {
-  -webkit-filter: blur(5px);
   filter: blur(5px);
-  transition: filter 500ms ease-in, -webkit-filter 500ms ease-in;
+  transition: filter 500ms ease-in;
 }
 
 .blur-up.lazyloaded {
-  -webkit-filter: blur(0);
   filter: blur(0);
 }
 
-body.light-mode {
-  background-color: #fff;
-  color: #333;
-  transition: background-color 0.3s ease;
-}
-body.dark-mode {
-  background-color: #1a1919;
-  color: #e2e8f0;
+/* Terminal window styles */
+.terminal-window {
+  background: var(--terminal-bg-secondary);
+  border: 1px solid var(--terminal-border);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px var(--terminal-shadow);
 }
 
-body.dark-mode article p,  strong, ul li ,p , h1 , h2 ,h3 ,h4 ,h5 , .prose h1, .prose h2, .prose h3 , .prose h4 , .prose strong , .prose li {
-  color: #e2e8f0 !important;
-}
-body.dark-mode .prose code, body.dark-mode .prose ul  li  strong{
-  color: #ffe600;
-}
-
-body.dark-mode li ,body.dark-mode strong  ,  body.dark-mode .prose h1 ,   body.dark-mode .prose h2 ,  body.dark-mode .prose h3  {
-  color: #e2e8f0 !important;
-}
-
-
-
-body.light-mode p,prose h1, .prose h2, .prose h3 , .prose h4 , .prose strong , .prose li ,body.light-mode article p,  strong, body.light-mode ul  li ,body.light-mode h1 ,body.light-mode h2 ,body.light-mode h3 , body.light-mode h4   {
-  color: #333 !important;
-}
-
-
+/* Enhanced dark/light mode toggle for terminal theme */
 .dark-mode-toggle {
   display: flex;
   margin: 0 auto;
 }
+
 .dark-mode-toggle > button {
   font-size: 1.2em;
   background: none;
   border: none;
-  color: #ffe600;
+  color: var(--terminal-accent);
   cursor: pointer;
   transition: color 0.3s ease;
+  padding: 0.5rem;
+  border-radius: 4px;
 }
+
+.dark-mode-toggle > button:hover {
+  background: var(--terminal-border);
+}
+
 .dark-mode-toggle > button:last-child {
-  color: #666;
+  color: var(--terminal-text);
+  opacity: 0.6;
 }
+
 .dark-mode-toggle > button:focus {
-  outline: none;
-}
-.toggle-control {
-  position: relative;
-  padding: 0 4px;
-  display: flex;
-  align-items: center;
-}
-input[type='checkbox'].dmcheck {
-  width: 40px;
-  height: 10px;
-  background: #555;
-  position: relative;
-  border-radius: 5px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  cursor: pointer;
-  vertical-align: 2px;
-  outline: none;
-}
-input[type='checkbox'].dmcheck:checked + label {
-  left: 30px;
-}
-input[type='checkbox'].dmcheck:focus-visible {
-  outline: solid 2px white;
-}
-input[type='checkbox'].dmcheck + label {
-  display: inline-block;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  position: absolute;
-  left: 2px;
-  background: #fff;
-  opacity: 0.9;
-  background-color: #f6f6f6;
+  outline: 2px solid var(--terminal-accent);
+  outline-offset: 2px;
 }
 
-
-.loading {
-  text-align: center;
-  
-}
-
+/* Social links with terminal styling */
 a.social {
   margin: 0 1rem;
-  transition: transform 250ms;
+  transition: all 250ms ease;
   display: inline-block;
+  color: var(--terminal-accent);
 }
 
 a.social:hover {
   transform: translateY(-2px);
+  color: var(--terminal-text);
 }
 
-a.youtube {
-  color: #eb3223;
+a.youtube { color: #eb3223; }
+a.facebook { color: #4968ad; }
+a.twitter { color: #49a1eb; }
+a.instagram { color: #E1306C; }
+a.github { color: var(--terminal-text); }
+a.linkedin { color: #0e76a8; }
+
+/* Loading animation */
+.loading {
+  text-align: center;
 }
 
-a.facebook {
-  color: #4968ad;
+/* Command interface styles */
+.command-prompt {
+  color: var(--terminal-accent);
+  font-weight: bold;
 }
 
-a.twitter {
-  color: #49a1eb;
+.command-input {
+  background: transparent;
+  border: none;
+  color: var(--terminal-text);
+  font-family: var(--font-mono);
+  outline: none;
+  width: 100%;
 }
 
-a.instagram {
-  color: #E1306C;
-}
-a.github {
-  color: black;
-}
-a.linkedin {
-  color: #0e76a8 ;
+.command-input::placeholder {
+  color: var(--terminal-text);
+  opacity: 0.6;
 }

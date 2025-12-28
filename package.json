@@ -5,43 +5,40 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
-  },
-  "resolutions": {
-    "htmlparser2": "^6.1.0"
-  },
-  "overrides": {
-    "htmlparser2": "^6.1.0"
+    "build": "node scripts/update-oss.js && node scripts/build-search.js && next build",
+    "start": "next start",
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "prebuild": "node scripts/update-oss.js && node scripts/build-search.js"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.32",
-    "@fortawesome/free-brands-svg-icons": "^5.15.1",
-    "@fortawesome/react-fontawesome": "^0.1.12",
+    "@fortawesome/fontawesome-svg-core": "^6.5.0",
+    "@fortawesome/free-brands-svg-icons": "^6.5.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@netlify/plugin-nextjs": "^5.11.4",
-    "axios": "^0.21.0",
-    "clsx": "^1.1.1",
-    "imagemin-mozjpeg": "^9.0.0",
-    "imagemin-optipng": "^8.0.0",
-    "lazysizes": "^5.2.2",
-    "lqip-loader": "^2.2.1",
-    "next": "10.0.0",
-    "next-compose-plugins": "^2.2.0",
-    "next-optimized-images": "^2.6.2",
-    "postcss-preset-env": "^6.7.0",
-    "react": "17.0.1",
-    "react-dom": "17.0.1",
-    "react-markdown": "^5.0.2",
-    "react-syntax-highlighter": "^15.2.1",
-    "typeface-merriweather": "^1.1.13",
-    "typeface-open-sans": "^1.1.13",
-    "use-dark-mode": "^2.3.1",
-    "webp-loader": "^0.6.0"
+    "axios": "^1.6.0",
+    "clsx": "^2.0.0",
+    "fuse.js": "^7.1.0",
+    "gray-matter": "^4.0.3",
+    "next": "^14.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-markdown": "^9.0.0",
+    "react-syntax-highlighter": "^15.5.0",
+    "use-dark-mode": "^2.3.1"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.2.0",
-    "gray-matter": "^4.0.2",
-    "tailwindcss": "^1.9.6"
+    "@tailwindcss/typography": "^0.5.10",
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@types/react-syntax-highlighter": "^15.5.13",
+    "eslint": "^8.0.0",
+    "eslint-config-next": "^14.2.0",
+    "postcss": "^8.4.0",
+    "postcss-preset-env": "^9.0.0",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.3.0"
   },
   "license": "MIT"
 }

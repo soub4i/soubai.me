@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://soubai.me/sitemap.xml
+
+# Block access to sensitive files
+Disallow: /api/
+Disallow: /_next/
+Disallow: /.env
+Disallow: /.git

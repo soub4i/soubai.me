@@ -1,15 +1,12 @@
-import "lazysizes";
-
 export default function Image({ alt, src, previewSrc, webpSrc, className }) {
+  // Simplified image component for terminal theme
   return (
-    <picture className={className}>
-      <source type="image/webp" data-srcset={webpSrc} />
-      <source type="image/png" data-srcset={src} />
-      <img
-        className={`lazyload blur-up ${className}`}
-        alt={alt}
-        src={previewSrc}
-      />
-    </picture>
+    <img
+      src={src}
+      alt={alt}
+      className={className}
+      style={{ width: '100%', height: 'auto' }}
+      loading="lazy"
+    />
   );
 }
