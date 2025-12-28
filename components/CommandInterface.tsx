@@ -131,6 +131,7 @@ export default function CommandInterface() {
 
   const toggleTheme = () => {
     if (typeof window !== 'undefined') {
+      // check current theme
       const html = document.documentElement;
       const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
       html.setAttribute('data-theme', newTheme);
@@ -142,7 +143,7 @@ export default function CommandInterface() {
   // Initialize theme on component mount
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const savedTheme = localStorage.getItem('theme') || 'light';
+      const savedTheme = localStorage.getItem('theme') || 'dark';
       const html = document.documentElement;
       html.setAttribute('data-theme', savedTheme);
       setCurrentTheme(savedTheme);
