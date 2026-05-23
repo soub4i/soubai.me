@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useState, useRef } from 'react';
 import { getSiteMetaData } from "utils/helpers";
 import Image from "components/Image";
+import { getReadTime } from "utils/read-time";
 
 interface Post {
   slug: string;
@@ -46,7 +47,7 @@ export default function HomePage({ posts }: HomePageProps) {
 
   useEffect(() => {
     if (page === 1) return;
-    const newItems = [...posts].slice(0, (page * postPerPage) - 1);
+    const newItems = [...posts].slice(0, page * postPerPage);
     setPostList([...newItems]);
   }, [page, posts, postPerPage]);
 
@@ -60,7 +61,7 @@ export default function HomePage({ posts }: HomePageProps) {
   return (
     <div className="max-w-6xl mx-auto px-4 pb-8">
       <div className="space-y-12">
-        {postList.map(({ frontmatter, slug }) => (
+        {postList.map(({ frontmatter, slug, content }) => (
           <article key={slug} className="border-2 rounded-xl p-8 bg-terminal-bg-secondary dark:bg-terminal-bg hover:bg-terminal-bg-secondary/80 dark:hover:bg-terminal-bg-secondary transition-all duration-300 shadow-lg hover:shadow-xl border-terminal-border dark:border-terminal-accent/30">
             <header className="mb-6">
               {frontmatter.socialImage && (
@@ -75,8 +76,10 @@ export default function HomePage({ posts }: HomePageProps) {
                <div className="flex flex-wrap items-center gap-4 mb-6">
                  <div className="flex items-center gap-2">
                    <span className="text-amber-600 dark:text-amber-400 text-xs">📅</span>
-                    <span className="text-terminal-text-secondary text-xs font-medium">{frontmatter.date}</span>
-                 </div>
+                     <span className="text-terminal-text-secondary text-xs font-medium">{frontmatter.date}</span>
+                  </div>
+                  <span className="text-terminal-text-secondary text-xs">•</span>
+                  <span className="text-terminal-text-secondary text-xs">{getReadTime(content)} min read</span>
 
                  {frontmatter.category && (
                    <>
