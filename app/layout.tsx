@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Fira_Code } from 'next/font/google'
+import { Fira_Code, Open_Sans } from 'next/font/google'
 import '../styles/global.css'
 import CommandInterface from '../components/CommandInterface'
 
@@ -7,6 +7,12 @@ const firaCode = Fira_Code({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700'],
   variable: '--font-mono'
+})
+
+const openSans = Open_Sans({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800'],
+  variable: '--font-sans'
 })
 
 export const metadata: Metadata = {
@@ -21,7 +27,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" data-theme="dark">
-      <body className={`${firaCode.variable} terminal-bg terminal-text min-h-screen font-mono`}>
+      <body className={`${firaCode.variable} ${openSans.variable} terminal-bg terminal-text min-h-screen font-mono`}>
         <CommandInterface />
         {children}
       </body>

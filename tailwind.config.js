@@ -35,9 +35,10 @@ module.exports = {
         "neon-orange": "#f92300",
       },
       fontFamily: {
-        'mono': ['Fira Code', 'JetBrains Mono', 'Monaco', 'Cascadia Code', 'monospace'],
-        'display': ['Fira Code', 'Open Sans', 'system-ui', 'sans-serif'],
-        'body': ['Fira Code', 'Merriweather', 'Georgia', 'serif'],
+        'mono': ['var(--font-mono)', 'Fira Code', 'JetBrains Mono', 'Monaco', 'Cascadia Code', 'monospace'],
+        'sans': ['var(--font-sans)', 'Open Sans', 'system-ui', 'sans-serif'],
+        'display': ['var(--font-mono)', 'Fira Code', 'Open Sans', 'system-ui', 'sans-serif'],
+        'body': ['var(--font-mono)', 'Fira Code', 'Merriweather', 'Georgia', 'serif'],
       },
       fontSize: {
         "7xl": "4.5rem",

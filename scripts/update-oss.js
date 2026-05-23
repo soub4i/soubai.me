@@ -4,6 +4,7 @@ const https = require('https');
 
 const owner = 'soub4i';
 const repos = [
+  'gh-relay',
   'lazystripe',
   'lghnay',
   'kubestatus-operator',

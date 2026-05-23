@@ -114,7 +114,7 @@ export default async function PostPage({ params }: PostPageProps) {
           )}
         </header>
 
-        <div className="prose prose-invert max-w-none">
+        <div>
           <ReactMarkdown
             components={{
               code({ node, inline, className, children, ...props }: any) {
@@ -136,31 +136,31 @@ export default async function PostPage({ params }: PostPageProps) {
                 );
               },
               h1: ({ children }) => (
-                <h1 className="text-2xl md:text-3xl lg:text-4xl font-black mb-6 md:mb-8 terminal-accent border-b-2 border-terminal-accent/60 pb-3 md:pb-4 tracking-tight leading-tight">
+                <h1 className="text-2xl md:text-3xl lg:text-4xl font-black mb-6 md:mb-8 terminal-accent border-b-2 border-terminal-accent/60 pb-3 md:pb-4 tracking-tight leading-tight font-mono">
                   {children}
                 </h1>
               ),
                h2: ({ children }) => (
-                 <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 terminal-accent border-b border-terminal-accent/40 pb-2 mt-8 md:mt-12 leading-tight">
+                 <h2 className="text-2xl md:text-3xl font-bold mb-4 terminal-accent border-b border-terminal-accent/40 pb-2 mt-10 leading-tight font-mono">
                    {children}
                  </h2>
                ),
                h3: ({ children }) => (
-                 <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 terminal-accent border-l-4 border-terminal-accent/50 pl-3 md:pl-4 bg-terminal-accent/5 py-2 leading-tight">
+                 <h3 className="text-xl md:text-2xl font-bold mb-3 terminal-accent border-l-4 border-terminal-accent/50 pl-3 md:pl-4 bg-terminal-accent/5 py-2 leading-tight font-mono">
                    {children}
                  </h3>
                ),
                h4: ({ children }) => (
-                 <h4 className="text-lg md:text-xl font-semibold mb-3 terminal-accent underline decoration-terminal-accent/60 underline-offset-4 leading-tight">
+                 <h4 className="text-lg md:text-xl font-semibold mb-3 terminal-accent underline decoration-terminal-accent/60 underline-offset-4 leading-tight font-mono">
                    {children}
                  </h4>
                ),
-               p: ({ children }) => <p className="mb-6 md:mb-8 terminal-text leading-relaxed text-base md:text-lg tracking-wide">{children}</p>,
-               ul: ({ children }) => <ul className="mb-6 md:mb-8 ml-4 md:ml-8 terminal-text space-y-3 md:space-y-4 list-disc list-inside text-sm md:text-base leading-relaxed">{children}</ul>,
-               ol: ({ children }) => <ol className="mb-6 md:mb-8 ml-4 md:ml-8 terminal-text space-y-3 md:space-y-4 list-decimal list-inside text-sm md:text-base leading-relaxed">{children}</ol>,
-               li: ({ children }) => <li className="terminal-text leading-relaxed text-sm md:text-base">{children}</li>,
+               p: ({ children }) => <p className="mb-5 terminal-text leading-relaxed text-base md:text-lg font-sans">{children}</p>,
+               ul: ({ children }) => <ul className="mb-6 ml-4 md:ml-8 terminal-text space-y-1 list-disc list-inside leading-relaxed font-sans">{children}</ul>,
+               ol: ({ children }) => <ol className="mb-6 ml-4 md:ml-8 terminal-text space-y-1 list-decimal list-inside leading-relaxed font-sans">{children}</ol>,
+               li: ({ children }) => <li className="terminal-text leading-relaxed font-sans">{children}</li>,
               blockquote: ({ children }) => (
-                <blockquote className="border-l-4 border-terminal-accent pl-8 italic terminal-text/90 my-8 bg-terminal-accent/10 p-6 rounded-lg border-terminal-accent/30">
+                <blockquote className="border-l-4 border-terminal-accent pl-8 italic terminal-text/90 my-8 bg-terminal-accent/10 p-6 rounded-lg border-terminal-accent/30 font-sans">
                   {children}
                 </blockquote>
               ),
@@ -169,7 +169,7 @@ export default async function PostPage({ params }: PostPageProps) {
                   {children}
                 </a>
               ),
-              strong: ({ children }) => <strong className="font-bold terminal-accent text-lg">{children}</strong>,
+              strong: ({ children }) => <strong className="font-bold terminal-accent">{children}</strong>,
               em: ({ children }) => <em className="italic terminal-text/80 font-medium">{children}</em>,
             }}
           >

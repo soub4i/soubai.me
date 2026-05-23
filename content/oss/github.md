@@ -3,6 +3,7 @@
 draft: false
 owner: soub4i
 repos:
+  - gh-relay
   - lazystripe
   - lghnay
   - kubestatus-operator

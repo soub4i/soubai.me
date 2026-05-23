@@ -3,23 +3,29 @@ import { getProjects } from 'utils/oss'
 
 // Mock GitHub data - in production, this would come from GitHub API
 const mockRepoData: Record<string, { description: string; stars: number; language: string; updated: string }> = {
+  'gh-relay': {
+    description: 'Share a private GitHub repo with anyone, no collaborator invite, no paid seat, no cleanup.',
+    stars: 82,
+    language: 'Go',
+    updated: '2026-05-18'
+  },
   'lazystripe': {
     description: 'Lazystripe is a powerful Terminal UI (TUI) for Stripe, designed for developers who want to manage their balances, customers, and transactions without leaving the command line.',
-    stars: 15,
+    stars: 17,
     language: 'Go',
-    updated: '2025-12-27'
+    updated: '2026-02-25'
   },
   'lghnay': {
     description: 'a robust SMS forwarding system designed for scenarios where you need to monitor SMS messages remotely. Whether you\'re tracking verification codes, monitoring alert systems, or simply need remote access to SMS messages, this project provides a complete end-to-end solution.',
     stars: 35,
     language: 'Rust',
-    updated: '2025-12-26'
+    updated: '2026-04-13'
   },
   'kubestatus-operator': {
     description: 'kubestatus operator',
-    stars: 54,
+    stars: 52,
     language: 'Go',
-    updated: '2025-12-11'
+    updated: '2026-03-05'
   },
   'hermes-ci': {
     description: 'Hermes CI is an open-source continuous integration platform',
@@ -53,9 +59,9 @@ const mockRepoData: Record<string, { description: string; stars: number; languag
   },
   'moroccan-git': {
     description: 'A collection of Moroccan aliases for Git workflow.',
-    stars: 69,
+    stars: 72,
     language: 'JavaScript',
-    updated: '2025-10-15'
+    updated: '2026-05-02'
   },
   'figma-tailwindcss-config-plugin': {
     description: 'Figma plugin to generate a configuration file for Tailwindcss framework',
