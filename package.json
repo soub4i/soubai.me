@@ -9,15 +9,10 @@
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
-    "prebuild": "node scripts/update-oss.js && node scripts/build-search.js"
+    "prebuild": "node scripts/generate-feed.js && node scripts/update-oss.js && node scripts/build-search.js"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.5.0",
-    "@fortawesome/free-brands-svg-icons": "^6.5.0",
-    "@fortawesome/react-fontawesome": "^0.2.0",
     "@netlify/plugin-nextjs": "^5.15.3",
-    "axios": "^1.6.0",
-    "clsx": "^2.0.0",
     "fuse.js": "^7.1.0",
     "gray-matter": "^4.0.3",
     "next": "^14.2.0",

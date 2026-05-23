@@ -18,6 +18,11 @@ const openSans = Open_Sans({
 export const metadata: Metadata = {
   title: "Soubai's stories",
   description: "A Software engineer (interested in cloud computing and distributed systems.) with a passion for building software that improves the world.",
+  alternates: {
+    types: {
+      'application/rss+xml': '/feed.xml',
+    },
+  },
 }
 
 export default function RootLayout({
@@ -28,6 +33,14 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="dark">
       <body className={`${firaCode.variable} ${openSans.variable} terminal-bg terminal-text min-h-screen font-mono`}>
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            try {
+              var theme = localStorage.getItem('theme');
+              if (theme) document.documentElement.setAttribute('data-theme', theme);
+            } catch(e) {}
+          `
+        }} />
         <CommandInterface />
         {children}
       </body>

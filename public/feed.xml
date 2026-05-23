@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Soubai&apos;s stories</title>
+    <link>https://soubai.me/</link>
+    <description>A Software engineer (interested in cloud computing and distributed systems.) with a passion for building software that improves the world.</description>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 23 May 2026 15:50:46 GMT</lastBuildDate>
+    <atom:link href="https://soubai.me/feed.xml" rel="self" type="application/rss+xml"/>
+    
+    <item>
+      <title>The Rise of Pseudo-Intellectuals in the Age of Algorithms</title>
+      <link>https://soubai.me/post/p/</link>
+      <guid>https://soubai.me/post/p/</guid>
+      <pubDate>Wed, 29 Oct 2025 00:00:00 GMT</pubDate>
+      <description>On the erosion of intellectualism in an era where algorithms reward confidence over expertise and speed over accuracy</description>
+      <category>commentary</category>
+    </item>
+
+    <item>
+      <title>Build an IoT SMS Gateway using ESP32 and Cloudflare Workers</title>
+      <link>https://soubai.me/post/build-iot-sms-gateway-esp32-cloudflare/</link>
+      <guid>https://soubai.me/post/build-iot-sms-gateway-esp32-cloudflare/</guid>
+      <pubDate>Fri, 24 Oct 2025 23:00:00 GMT</pubDate>
+      <description>Build a complete SMS forwarding system using TTGO T-Call ESP32, Cloudflare Workers, and a terminal UI client</description>
+      <category>iot</category>
+    </item>
+
+    <item>
+      <title>In the joy of less</title>
+      <link>https://soubai.me/post/minimalism/</link>
+      <guid>https://soubai.me/post/minimalism/</guid>
+      <pubDate>Fri, 04 Jul 2025 23:00:00 GMT</pubDate>
+      <description>The subject for this writing is very close to my heart, and so far, it has given me a lot of backlash from people... You may read, listen, and scroll a lot of content about minimalism, but this will be different in a way that it’s my take and experience.</description>
+      <category>philosophy</category>
+    </item>
+
+    <item>
+      <title>Notes from my bedroom about self, community, and politics</title>
+      <link>https://soubai.me/post/notes-from-br/</link>
+      <guid>https://soubai.me/post/notes-from-br/</guid>
+      <pubDate>Wed, 25 Dec 2024 00:00:00 GMT</pubDate>
+      <description>If you&apos;re looking for technical content, you might prefer my previous blog post.</description>
+      <category>philosophy</category>
+    </item>
+
+    <item>
+      <title>How to add status page to your k8s cluster using kubestatus</title>
+      <link>https://soubai.me/post/how-to-add-status-page-to-k8s-cluster/</link>
+      <guid>https://soubai.me/post/how-to-add-status-page-to-k8s-cluster/</guid>
+      <pubDate>Sat, 14 Jan 2023 00:00:00 GMT</pubDate>
+      <description>Let&apos;s add a status page that shows the status of our services</description>
+      <category>k8s</category>
+    </item>
+
+    <item>
+      <title>Breaking down etcd</title>
+      <link>https://soubai.me/post/brakingdown-etcd/</link>
+      <guid>https://soubai.me/post/brakingdown-etcd/</guid>
+      <pubDate>Sun, 10 Jul 2022 23:00:00 GMT</pubDate>
+      <description>Just another blog post to demystify the famous etcd.</description>
+      <category>cloud</category>
+    </item>
+
+    <item>
+      <title>Look mom no TravisCI</title>
+      <link>https://soubai.me/post/look-mom-no-travisCI/</link>
+      <guid>https://soubai.me/post/look-mom-no-travisCI/</guid>
+      <pubDate>Sat, 14 May 2022 23:00:00 GMT</pubDate>
+      <description>Back to blogging again I&apos;m learning golang and so I decided to create a simple CI platform.</description>
+      <category>devops</category>
+    </item>
+
+    <item>
+      <title>Build your own webpack plugin</title>
+      <link>https://soubai.me/post/build-your-own-webpack-plugin/</link>
+      <guid>https://soubai.me/post/build-your-own-webpack-plugin/</guid>
+      <pubDate>Thu, 13 May 2021 23:00:00 GMT</pubDate>
+      <description>In this blog post I will teach you how you can easily build a webpack plugin ...</description>
+      <category>javascript</category>
+    </item>
+
+    <item>
+      <title>Holy moly! Quines in javascript</title>
+      <link>https://soubai.me/post/quines-in-javascript/</link>
+      <guid>https://soubai.me/post/quines-in-javascript/</guid>
+      <pubDate>Sun, 14 Mar 2021 00:00:00 GMT</pubDate>
+      <description>Let&apos;s build a quine using javascript. but wait a minute what is QUINE ??? ...</description>
+      <category>javascript</category>
+    </item>
+
+    <item>
+      <title>Backoff Algorithm implementation in javascript</title>
+      <link>https://soubai.me/post/what-the-heck-is-backoff-algorithm/</link>
+      <guid>https://soubai.me/post/what-the-heck-is-backoff-algorithm/</guid>
+      <pubDate>Sun, 07 Mar 2021 00:00:00 GMT</pubDate>
+      <description>The first time I was asked &apos;Define backoff algorithm&apos; I mumbled WTH is Backoff algorithm...</description>
+      <category>javascript</category>
+    </item>
+
+    <item>
+      <title>What&apos;s the heck is web components</title>
+      <link>https://soubai.me/post/whats-the-heck-is-web-components/</link>
+      <guid>https://soubai.me/post/whats-the-heck-is-web-components/</guid>
+      <pubDate>Thu, 29 Oct 2020 00:00:00 GMT</pubDate>
+      <description>Hello in this blog post I will try to demystify the web component concept for you</description>
+      <category>javascript</category>
+    </item>
+
+    <item>
+      <title>Smarter frontend app with Tensorflow.js</title>
+      <link>https://soubai.me/post/smarter-frontend-app-with-tensorflow-js/</link>
+      <guid>https://soubai.me/post/smarter-frontend-app-with-tensorflow-js/</guid>
+      <pubDate>Tue, 25 Aug 2020 23:00:00 GMT</pubDate>
+      <description>Well in this blog post I will give you simple steps to put machine learning into as frontend developer that has nothing to do with AI or ML before.</description>
+      <category>javascript</category>
+    </item>
+
+    <item>
+      <title>Create interactive mail utility CLI Tool using Deno</title>
+      <link>https://soubai.me/post/create-mail-utility-with-deno/</link>
+      <guid>https://soubai.me/post/create-mail-utility-with-deno/</guid>
+      <pubDate>Wed, 10 Jun 2020 23:00:00 GMT</pubDate>
+      <description>Hack around deno again and create an interactive mail utility using Deno</description>
+      <category>deno</category>
+    </item>
+
+    <item>
+      <title>build CLI Tool with Deno</title>
+      <link>https://soubai.me/post/build-cli-with-deno/</link>
+      <guid>https://soubai.me/post/build-cli-with-deno/</guid>
+      <pubDate>Wed, 27 May 2020 23:00:00 GMT</pubDate>
+      <description>Today we will build a small CLI to help us to shorten url using Deno</description>
+      <category>deno</category>
+    </item>
+
+    <item>
+      <title>What I learned by Becoming a Conference Speaker</title>
+      <link>https://soubai.me/post/being-speak-for-developer/</link>
+      <guid>https://soubai.me/post/being-speak-for-developer/</guid>
+      <pubDate>Tue, 12 May 2020 23:00:00 GMT</pubDate>
+      <description>2019 was a very exciting year for me it’s the year when I made my first official public speaking...</description>
+      <category>talk</category>
+    </item>
+
+    <item>
+      <title>Design patterns in Typescript made easy — part III</title>
+      <link>https://soubai.me/post/design-patterns-in-javascript-made-easy-part-iii/</link>
+      <guid>https://soubai.me/post/design-patterns-in-javascript-made-easy-part-iii/</guid>
+      <pubDate>Mon, 18 Feb 2019 00:00:00 GMT</pubDate>
+      <description>in my last two articles, I talked about design patterns (Creational and Structural) in javascript using typescript...</description>
+      <category>typescript</category>
+    </item>
+
+    <item>
+      <title>Run your node.js app on the cluster mode</title>
+      <link>https://soubai.me/post/run-your-node-js-app-on-the-cluster-mode/</link>
+      <guid>https://soubai.me/post/run-your-node-js-app-on-the-cluster-mode/</guid>
+      <pubDate>Thu, 13 Dec 2018 00:00:00 GMT</pubDate>
+      <description>Node.js is an open-source, cross-platform JavaScript run-time environment that executes JavaScript code outside of a browser...</description>
+      <category>node.js</category>
+    </item>
+
+    <item>
+      <title>Design patterns in Typescript made easy — part II</title>
+      <link>https://soubai.me/post/design-patterns-in-javascript-made-easy-part-ii/</link>
+      <guid>https://soubai.me/post/design-patterns-in-javascript-made-easy-part-ii/</guid>
+      <pubDate>Sat, 27 Oct 2018 23:00:00 GMT</pubDate>
+      <description>Today we will talk about structural design patterns which are considered as design patterns that make easy/possible relations between…</description>
+      <category>typescript</category>
+    </item>
+
+    <item>
+      <title>Design patterns in Typescript made easy — part I</title>
+      <link>https://soubai.me/post/design-patterns-in-javascript-made-easy-part-i/</link>
+      <guid>https://soubai.me/post/design-patterns-in-javascript-made-easy-part-i/</guid>
+      <pubDate>Sun, 07 Oct 2018 23:00:00 GMT</pubDate>
+      <description>A pattern is a reusable solution that can be applied to commonly occurring problems in software design</description>
+      <category>typescript</category>
+    </item>
+
+    <item>
+      <title>Getting started with Voice Driven Applications using Node.js</title>
+      <link>https://soubai.me/post/get-started-with-voice-driven-applications-using-node-js/</link>
+      <guid>https://soubai.me/post/get-started-with-voice-driven-applications-using-node-js/</guid>
+      <pubDate>Thu, 16 Aug 2018 23:00:00 GMT</pubDate>
+      <description>Voice-activated applications used to be the stuff that science fiction was made of, but not anymore. Today, these applications are readily used on a daily basis by adults and children alike for both business and personal uses...</description>
+      <category>Node.js</category>
+    </item>
+
+    <item>
+      <title>Get started with Face detection in nodejs</title>
+      <link>https://soubai.me/post/Get-started-with-Face-detection-in-nodejs/</link>
+      <guid>https://soubai.me/post/Get-started-with-Face-detection-in-nodejs/</guid>
+      <pubDate>Sun, 25 Mar 2018 00:00:00 GMT</pubDate>
+      <description>NodeJS is a great technology for web/IoT projects it’s fast , resources friendly and beautiful. Also among its qualities there is code re-usability and we should says thank to NPM...</description>
+      <category>node.js</category>
+    </item>
+  </channel>
+</rss>
