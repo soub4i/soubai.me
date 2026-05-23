@@ -6,6 +6,10 @@ import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import SocialShare from "components/SocialShare";
+import { getReadTime } from 'utils/read-time';
+import { extractToc } from 'utils/extract-toc';
+import { slugify } from 'utils/slugify';
+import ArticleTOC from 'components/ArticleTOC';
 
 
 
@@ -49,6 +53,8 @@ export default async function PostPage({ params }: PostPageProps) {
   }
 
   const { frontmatter, post, previousPost, nextPost } = postData;
+  const tocItems = extractToc(post.content);
+  const readTime = getReadTime(post.content);
 
   return (
     <div className="max-w-4xl mx-auto px-3 md:px-4 py-6 md:py-8">
@@ -103,6 +109,9 @@ export default async function PostPage({ params }: PostPageProps) {
                 </div>
               </>
             )}
+            <span className="terminal-text/40">•</span>
+            <span className="terminal-accent/80 text-sm">📖</span>
+            <span className="terminal-accent font-medium">{readTime} min read</span>
           </div>
 
           <h1 className="text-3xl font-bold mb-4 terminal-accent font-mono">
@@ -114,7 +123,21 @@ export default async function PostPage({ params }: PostPageProps) {
           )}
         </header>
 
-        <div>
+        <div className="flex gap-8">
+          <aside className="hidden lg:block w-56 flex-shrink-0">
+            <div className="sticky top-24">
+              <ArticleTOC items={tocItems} />
+            </div>
+          </aside>
+          <div className="flex-1 min-w-0">
+            <div className="lg:hidden mb-6">
+              <details className="terminal-window p-3">
+                <summary className="terminal-accent font-mono text-sm cursor-pointer select-none">Contents</summary>
+                <div className="mt-3">
+                  <ArticleTOC items={tocItems} />
+                </div>
+              </details>
+            </div>
           <ReactMarkdown
             components={{
               code({ node, inline, className, children, ...props }: any) {
@@ -135,26 +158,30 @@ export default async function PostPage({ params }: PostPageProps) {
                   </code>
                 );
               },
-              h1: ({ children }) => (
-                <h1 className="text-2xl md:text-3xl lg:text-4xl font-black mb-6 md:mb-8 terminal-accent border-b-2 border-terminal-accent/60 pb-3 md:pb-4 tracking-tight leading-tight font-mono">
+              h1: ({ children, ...props }) => {
+                const id = slugify(String(children));
+                return <h1 id={id} className="text-2xl md:text-3xl lg:text-4xl font-black mb-6 md:mb-8 terminal-accent border-b-2 border-terminal-accent/60 pb-3 md:pb-4 tracking-tight leading-tight font-mono">
                   {children}
                 </h1>
-              ),
-               h2: ({ children }) => (
-                 <h2 className="text-2xl md:text-3xl font-bold mb-4 terminal-accent border-b border-terminal-accent/40 pb-2 mt-10 leading-tight font-mono">
-                   {children}
-                 </h2>
-               ),
-               h3: ({ children }) => (
-                 <h3 className="text-xl md:text-2xl font-bold mb-3 terminal-accent border-l-4 border-terminal-accent/50 pl-3 md:pl-4 bg-terminal-accent/5 py-2 leading-tight font-mono">
-                   {children}
-                 </h3>
-               ),
-               h4: ({ children }) => (
-                 <h4 className="text-lg md:text-xl font-semibold mb-3 terminal-accent underline decoration-terminal-accent/60 underline-offset-4 leading-tight font-mono">
-                   {children}
-                 </h4>
-               ),
+              },
+               h2: ({ children, ...props }) => {
+                 const id = slugify(String(children));
+                 return <h2 id={id} className="text-2xl md:text-3xl font-bold mb-4 terminal-accent border-b border-terminal-accent/40 pb-2 mt-10 leading-tight font-mono">
+                    {children}
+                  </h2>
+                },
+               h3: ({ children, ...props }) => {
+                 const id = slugify(String(children));
+                 return <h3 id={id} className="text-xl md:text-2xl font-bold mb-3 terminal-accent border-l-4 border-terminal-accent/50 pl-3 md:pl-4 bg-terminal-accent/5 py-2 leading-tight font-mono">
+                    {children}
+                  </h3>
+                },
+               h4: ({ children, ...props }) => {
+                 const id = slugify(String(children));
+                 return <h4 id={id} className="text-lg md:text-xl font-semibold mb-3 terminal-accent underline decoration-terminal-accent/60 underline-offset-4 leading-tight font-mono">
+                    {children}
+                  </h4>
+                },
                p: ({ children }) => <p className="mb-5 terminal-text leading-relaxed text-base md:text-lg font-sans">{children}</p>,
                ul: ({ children }) => <ul className="mb-6 ml-4 md:ml-8 terminal-text space-y-1 list-disc list-inside leading-relaxed font-sans">{children}</ul>,
                ol: ({ children }) => <ol className="mb-6 ml-4 md:ml-8 terminal-text space-y-1 list-decimal list-inside leading-relaxed font-sans">{children}</ol>,
@@ -175,6 +202,7 @@ export default async function PostPage({ params }: PostPageProps) {
           >
             {post.content}
           </ReactMarkdown>
+          </div>
         </div>
 
         <div className="mt-12">
