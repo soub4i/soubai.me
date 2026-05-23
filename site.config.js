@@ -10,7 +10,7 @@ export default {
     description:
       "A Software engineer (interested in cloud computing and distributed systems.) with a passion for building software that improves the world. I love to learn new things and I'm always looking for new challenges.",
     about: `A Software engineer (interested in cloud computing and distributed systems.) with a passion for building software that improves the world. I love to learn new things and I'm always looking for new challenges.`,
-    siteUrl: "https://nextjs-starter-blog-demo.netlify.app/",
+    siteUrl: "https://soubai.me/",
     language: "en-US",
     social: {
       twitter: "soub4i",

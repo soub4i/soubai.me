@@ -111,7 +111,7 @@ export default function About() {
             </p>
 
             <p>
-              Deeply invested in community building, Abderrahim is also the host of the S7aba podcast, where he explores cloud computing and modern engineering trends. He maintains several open-source projects, including the "awesome-morocco" repository and various developer tools like `kubestatus` and `hermes-ci`. By blending a pragmatic platform mindset with a focus on developer experience, he continues to empower teams to build resilient, high-quality software while fostering a vibrant ecosystem for the next generation of engineers.
+              Deeply invested in community building, Abderrahim is also the host of the S7aba podcast, where he explores cloud computing and modern engineering trends. He maintains several open-source projects, including the {'"'}awesome-morocco{'"'} repository and various developer tools like `kubestatus` and `hermes-ci`. By blending a pragmatic platform mindset with a focus on developer experience, he continues to empower teams to build resilient, high-quality software while fostering a vibrant ecosystem for the next generation of engineers.
             </p>
           </div>
 

@@ -18,33 +18,26 @@ export function getSortedPosts() {
   const postFolders = getPostsFolders();
   const posts = postFolders
     .map(({ filename }) => {
-      // Get raw content from file
       const markdownWithMetadata = fs
         .readFileSync(`content/posts/${filename}`)
         .toString();
 
-      // Parse markdown, get frontmatter data, excerpt and content.
       const { data, excerpt, content } = matter(markdownWithMetadata);
-
-      const frontmatter = {
-        ...data,
-        date: getFormattedDate(data.date),
-      };
-
-      // Remove .md file extension from post name
       const slug = filename.replace(".md", "");
 
-      return {
-        slug,
-        frontmatter,
-        excerpt,
-        content,
-      };
+      return { slug, data, excerpt, content };
     })
-    .filter(post => !post.frontmatter.draft)
+    .filter(post => !post.data.draft)
     .sort(
-      (a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
+      (a, b) => new Date(b.data.date) - new Date(a.data.date)
     )
+    .map(({ data, ...rest }) => ({
+      ...rest,
+      frontmatter: {
+        ...data,
+        date: getFormattedDate(data.date),
+      },
+    }))
 
   return posts;
 }
@@ -66,6 +59,7 @@ export function getPostBySlug(slug) {
 
   const postIndex = posts.findIndex(({ slug: postSlug }) => postSlug === slug);
 
+  if (postIndex === -1) return undefined;
 
   const { frontmatter, content, excerpt } = posts[postIndex];
 

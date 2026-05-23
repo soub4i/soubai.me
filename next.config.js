@@ -7,10 +7,8 @@ const nextConfig = {
     unoptimized: true, // Required for static export
   },
 
-  // Experimental features for better terminal theme support
-  experimental: {
-    optimizePackageImports: ['@fortawesome/react-fontawesome'],
-  },
+  // Experimental features
+  experimental: {},
 };
 
 module.exports = nextConfig;

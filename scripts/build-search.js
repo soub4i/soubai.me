@@ -29,25 +29,21 @@ function getSortedPosts() {
         .toString();
 
       const { data, excerpt, content } = matter(markdownWithMetadata);
-
-      const frontmatter = {
-        ...data,
-        date: getFormattedDate(data.date),
-      };
-
       const slug = filename.replace('.md', '');
 
-      return {
-        slug,
-        frontmatter,
-        excerpt,
-        content,
-      };
+      return { slug, data, excerpt, content };
     })
-    .filter(post => !post.frontmatter.draft)
+    .filter(post => !post.data.draft)
     .sort(
-      (a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
-    );
+      (a, b) => new Date(b.data.date) - new Date(a.data.date)
+    )
+    .map(({ data, ...rest }) => ({
+      ...rest,
+      frontmatter: {
+        ...data,
+        date: getFormattedDate(data.date),
+      },
+    }));
 
   return posts;
 }
@@ -71,23 +67,21 @@ function getSortedTalks() {
         .toString();
 
       const { data } = matter(markdownWithMetadata);
-
-      const frontmatter = {
-        ...data,
-        date: getFormattedDate(data.date),
-      };
-
       const slug = filename.replace('.md', '');
 
-      return {
-        slug,
-        frontmatter,
-      };
+      return { slug, data };
     })
-    .filter(talk => !talk.frontmatter.draft)
+    .filter(talk => !talk.data.draft)
     .sort(
-      (a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
-    );
+      (a, b) => new Date(b.data.date) - new Date(a.data.date)
+    )
+    .map(({ data, ...rest }) => ({
+      ...rest,
+      frontmatter: {
+        ...data,
+        date: getFormattedDate(data.date),
+      },
+    }));
 
   return talks;
 }

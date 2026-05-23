@@ -19,32 +19,26 @@ export function getSortedTalks() {
   const talkFolders = getTalksFolders();
   const talks = talkFolders
     .map(({ filename }) => {
-      // Get raw content from file
       const markdownWithMetadata = fs
         .readFileSync(`content/talks/${filename}`)
         .toString();
 
-      // Parse markdown, get frontmatter data, excerpt and content.
       const { data } = matter(markdownWithMetadata);
-
-      const frontmatter = {
-        ...data,
-        date: getFormattedDate(data.date),
-
-      };
-
-      // Remove .md file extension from post name
       const slug = filename.replace(".md", "");
 
-      return {
-        slug,
-        frontmatter,
-      };
+      return { slug, data };
     })
-    .filter(talk => !talk.frontmatter.draft)
+    .filter(talk => !talk.data.draft)
     .sort(
-      (a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
+      (a, b) => new Date(b.data.date) - new Date(a.data.date)
     )
+    .map(({ data, ...rest }) => ({
+      ...rest,
+      frontmatter: {
+        ...data,
+        date: getFormattedDate(data.date),
+      },
+    }))
 
   return talks;
 }
@@ -64,13 +58,14 @@ export function getTalksSlugs() {
 export function getTalkBySlug(slug) {
   const talks = getSortedTalks();
 
-  const postIndex = talks.findIndex(({ slug: postSlug }) => postSlug === slug);
+  const talkIndex = talks.findIndex(({ slug: talkSlug }) => talkSlug === slug);
 
+  if (talkIndex === -1) return undefined;
 
-  const { frontmatter, content, excerpt } = talks[postIndex];
+  const { frontmatter } = talks[talkIndex];
 
-  const previousPost = talks[postIndex + 1];
-  const nextPost = talks[postIndex - 1];
+  const previousTalk = talks[talkIndex + 1];
+  const nextTalk = talks[talkIndex - 1];
 
-  return { frontmatter, talk: { content, excerpt }, previousPost, nextPost };
+  return { frontmatter, previousTalk, nextTalk };
 }

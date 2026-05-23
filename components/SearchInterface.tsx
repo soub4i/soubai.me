@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { searchContent } from '../utils/search';
 
 export default function SearchInterface() {
   const [query, setQuery] = useState('');
@@ -16,7 +17,6 @@ export default function SearchInterface() {
 
     setIsSearching(true);
     try {
-      const { searchContent } = await import('../utils/search');
       const searchResults = await searchContent(searchQuery, 10);
       setResults(searchResults);
     } catch (error) {
@@ -116,7 +116,7 @@ export default function SearchInterface() {
       {query && results.length === 0 && !isSearching && (
         <div className="text-center py-8">
           <div className="text-terminal-text/60 font-mono text-sm">
-            No results found for "{query}"
+            No results found for {'"'}{query}{'"'}
           </div>
           <div className="text-terminal-text/40 font-mono text-xs mt-2">
             Try different keywords or check spelling

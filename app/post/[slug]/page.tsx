@@ -57,7 +57,7 @@ export default async function PostPage({ params }: PostPageProps) {
   const readTime = getReadTime(post.content);
 
   return (
-    <div className="max-w-4xl mx-auto px-3 md:px-4 py-6 md:py-8">
+    <div className="max-w-4xl lg:max-w-6xl mx-auto px-3 md:px-4 py-6 md:py-8">
       <article className="terminal-window p-4 md:p-6">
         <div className="flex items-center gap-2 mb-6">
           <span className="command-prompt">soubai@terminal:~$</span>
@@ -138,70 +138,70 @@ export default async function PostPage({ params }: PostPageProps) {
                 </div>
               </details>
             </div>
-          <ReactMarkdown
-            components={{
-              code({ node, inline, className, children, ...props }: any) {
-                const match = /language-(\w+)/.exec(className || '');
-                return !inline && match ? (
-                  <SyntaxHighlighter
-                    style={oneDark}
-                    language={match[1]}
-                    PreTag="div"
-                    className="rounded-lg border border-terminal-accent/30 my-4"
-                    {...props}
-                  >
-                    {String(children).replace(/\n$/, '')}
-                  </SyntaxHighlighter>
-                ) : (
-                  <code className={`${className} terminal-accent bg-terminal-bg/70 px-2 py-1 rounded-md text-sm border border-terminal-accent/30 font-semibold`} {...props}>
+            <ReactMarkdown
+              components={{
+                code({ node, inline, className, children, ...props }: any) {
+                  const match = /language-(\w+)/.exec(className || '');
+                  return !inline && match ? (
+                    <SyntaxHighlighter
+                      style={oneDark}
+                      language={match[1]}
+                      PreTag="div"
+                      className="rounded-lg border border-terminal-accent/30 my-4"
+                      {...props}
+                    >
+                      {String(children).replace(/\n$/, '')}
+                    </SyntaxHighlighter>
+                  ) : (
+                    <code className={`${className} terminal-accent bg-terminal-bg/70 px-2 py-1 rounded-md text-sm border border-terminal-accent/30 font-semibold`} {...props}>
+                      {children}
+                    </code>
+                  );
+                },
+                h1: ({ children, ...props }) => {
+                  const id = slugify(String(children));
+                  return <h1 id={id} className="text-2xl md:text-3xl lg:text-4xl font-black mb-6 md:mb-8 terminal-accent border-b-2 border-terminal-accent/60 pb-3 md:pb-4 tracking-tight leading-tight font-mono">
                     {children}
-                  </code>
-                );
-              },
-              h1: ({ children, ...props }) => {
-                const id = slugify(String(children));
-                return <h1 id={id} className="text-2xl md:text-3xl lg:text-4xl font-black mb-6 md:mb-8 terminal-accent border-b-2 border-terminal-accent/60 pb-3 md:pb-4 tracking-tight leading-tight font-mono">
-                  {children}
-                </h1>
-              },
-               h2: ({ children, ...props }) => {
-                 const id = slugify(String(children));
-                 return <h2 id={id} className="text-2xl md:text-3xl font-bold mb-4 terminal-accent border-b border-terminal-accent/40 pb-2 mt-10 leading-tight font-mono">
+                  </h1>
+                },
+                h2: ({ children, ...props }) => {
+                  const id = slugify(String(children));
+                  return <h2 id={id} className="text-2xl md:text-3xl font-bold mb-4 terminal-accent border-b border-terminal-accent/40 pb-2 mt-10 leading-tight font-mono">
                     {children}
                   </h2>
                 },
-               h3: ({ children, ...props }) => {
-                 const id = slugify(String(children));
-                 return <h3 id={id} className="text-xl md:text-2xl font-bold mb-3 terminal-accent border-l-4 border-terminal-accent/50 pl-3 md:pl-4 bg-terminal-accent/5 py-2 leading-tight font-mono">
+                h3: ({ children, ...props }) => {
+                  const id = slugify(String(children));
+                  return <h3 id={id} className="text-xl md:text-2xl font-bold mb-3 terminal-accent border-l-4 border-terminal-accent/50 pl-3 md:pl-4 bg-terminal-accent/5 py-2 leading-tight font-mono">
                     {children}
                   </h3>
                 },
-               h4: ({ children, ...props }) => {
-                 const id = slugify(String(children));
-                 return <h4 id={id} className="text-lg md:text-xl font-semibold mb-3 terminal-accent underline decoration-terminal-accent/60 underline-offset-4 leading-tight font-mono">
+                h4: ({ children, ...props }) => {
+                  const id = slugify(String(children));
+                  return <h4 id={id} className="text-lg md:text-xl font-semibold mb-3 terminal-accent underline decoration-terminal-accent/60 underline-offset-4 leading-tight font-mono">
                     {children}
                   </h4>
                 },
-               p: ({ children }) => <p className="mb-5 terminal-text leading-relaxed text-base md:text-lg font-sans">{children}</p>,
-               ul: ({ children }) => <ul className="mb-6 ml-4 md:ml-8 terminal-text space-y-1 list-disc list-inside leading-relaxed font-sans">{children}</ul>,
-               ol: ({ children }) => <ol className="mb-6 ml-4 md:ml-8 terminal-text space-y-1 list-decimal list-inside leading-relaxed font-sans">{children}</ol>,
-               li: ({ children }) => <li className="terminal-text leading-relaxed font-sans">{children}</li>,
-              blockquote: ({ children }) => (
-                <blockquote className="border-l-4 border-terminal-accent pl-8 italic terminal-text/90 my-8 bg-terminal-accent/10 p-6 rounded-lg border-terminal-accent/30 font-sans">
-                  {children}
-                </blockquote>
-              ),
-              a: ({ href, children }) => (
-                <a href={href} className="terminal-accent hover:underline hover:terminal-text transition-all duration-200 font-medium" target="_blank" rel="noopener noreferrer">
-                  {children}
-                </a>
-              ),
-              strong: ({ children }) => <strong className="font-bold terminal-accent">{children}</strong>,
-              em: ({ children }) => <em className="italic terminal-text/80 font-medium">{children}</em>,
-            }}
-          >
-            {post.content}
-          </ReactMarkdown>
+                p: ({ children }) => <p className="mb-5 terminal-text leading-relaxed text-base md:text-lg font-sans">{children}</p>,
+                ul: ({ children }) => <ul className="mb-6 ml-4 md:ml-8 terminal-text space-y-1 list-disc list-inside leading-relaxed font-sans">{children}</ul>,
+                ol: ({ children }) => <ol className="mb-6 ml-4 md:ml-8 terminal-text space-y-1 list-decimal list-inside leading-relaxed font-sans">{children}</ol>,
+                li: ({ children }) => <li className="terminal-text leading-relaxed font-sans">{children}</li>,
+                blockquote: ({ children }) => (
+                  <blockquote className="border-l-4 border-terminal-accent pl-8 italic terminal-text/90 my-8 bg-terminal-accent/10 p-6 rounded-lg border-terminal-accent/30 font-sans">
+                    {children}
+                  </blockquote>
+                ),
+                a: ({ href, children }) => (
+                  <a href={href} className="terminal-accent hover:underline hover:terminal-text transition-all duration-200 font-medium" target="_blank" rel="noopener noreferrer">
+                    {children}
+                  </a>
+                ),
+                strong: ({ children }) => <strong className="font-bold terminal-accent">{children}</strong>,
+                em: ({ children }) => <em className="italic terminal-text/80 font-medium">{children}</em>,
+              }}
+            >
+              {post.content}
+            </ReactMarkdown>
           </div>
         </div>
 
