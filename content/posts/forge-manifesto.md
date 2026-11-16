@@ -24,7 +24,7 @@ A disclaimer: I’m not advocating for replacing people with machines. I’m adv
 
 ## The problem with “it works”
 
-The first time I saw an AI write code that actually ran, I felt the same thing I felt the first time I saw a computer play chess: wonder, followed by mild humiliation. Then I ran the code for real and felt something else entirely: the ancient fear of a test suite that passes for the wrong reason.
+The first time I saw a model write code that actually ran, I felt the same thing I felt the first time I saw a computer play chess: wonder, followed by mild humiliation. Then I ran the code for real and felt something else entirely: the ancient fear of a test suite that passes for the wrong reason.
 
 Because that’s the thing nobody tells you about generated code. It compiles. It looks right. It has comments. It even has tests, sometimes. And then a month later you find out that the tests assert the bug, the benchmark measures nothing, and the error handling was copied from a blog post that was wrong in 2019.
 
@@ -48,7 +48,7 @@ One iteration is boring in the best way. The architect writes a plan. The design
 
 Then the loop starts again if anything failed.
 
-Each stage runs in a fresh OpenCode session and hands work to the next one through files. Every stage has a narrow write scope: security, review, and triage cannot touch production code; release may only touch documentation and release metadata. The reviewer can block the run. Security can block the run. The gates can block the run. The model cannot unblock itself.
+Each stage runs in a fresh OpenCode session and hands work to the next one through files. Every stage has a narrow write scope: security, review, and triage cannot touch production code; release may only touch documentation and release metadata. The reviewer can block the run. Security can block the run. The gates can block the run. The model cannot talk its way out of a failure.
 
 Under the hood, models are routed by stage and tier: a reasoning model for architecture and review, cheaper ones for fixing and release. You can override any stage. The point is not to worship one model; the point is to make the model replaceable.
 
