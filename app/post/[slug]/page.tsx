@@ -10,8 +10,10 @@ import { getReadTime } from 'utils/read-time';
 import { extractToc } from 'utils/extract-toc';
 import { slugify } from 'utils/slugify';
 import ArticleTOC from 'components/ArticleTOC';
+import SiteConfig from '../../../site.config';
 
-
+const site = SiteConfig.siteMetadata;
+const siteUrl = new URL(site.url);
 
 interface PostPageProps {
   params: {
@@ -249,9 +251,37 @@ export async function generateMetadata({ params }: PostPageProps) {
     };
   }
 
+  const title = postData.frontmatter.title || 'Untitled Post';
+  const description = postData.frontmatter.description || postData.post.excerpt || '';
+  const postPath = `/post/${params.slug}/`;
+  const postUrl = new URL(postPath, siteUrl).toString();
+  const imageUrl = postData.frontmatter.socialImage
+    ? new URL(postData.frontmatter.socialImage, siteUrl).toString()
+    : undefined;
+  const images = imageUrl ? [{ url: imageUrl, alt: title }] : undefined;
+
   return {
-    title: postData.frontmatter.title || 'Untitled Post',
-    description: postData.frontmatter.description || postData.post.excerpt,
+    title,
+    description,
+    alternates: {
+      canonical: postPath,
+    },
+    openGraph: {
+      type: 'article',
+      title,
+      description,
+      url: postUrl,
+      siteName: site.title,
+      images,
+      tags: postData.frontmatter.tags,
+    },
+    twitter: {
+      card: imageUrl ? 'summary_large_image' : 'summary',
+      title,
+      description,
+      images: imageUrl ? [imageUrl] : undefined,
+      creator: `@${site.social.twitter}`,
+    },
   };
 }
 

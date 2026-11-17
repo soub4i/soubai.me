@@ -2,6 +2,11 @@ import type { Metadata } from 'next'
 import { Fira_Code, Open_Sans } from 'next/font/google'
 import '../styles/global.css'
 import CommandInterface from '../components/CommandInterface'
+import SiteConfig from '../site.config'
+
+const site = SiteConfig.siteMetadata
+const siteUrl = new URL(site.url)
+const defaultOgImage = new URL('/media/avatar.jpg', siteUrl).toString()
 
 const firaCode = Fira_Code({
   subsets: ['latin'],
@@ -16,12 +21,36 @@ const openSans = Open_Sans({
 })
 
 export const metadata: Metadata = {
-  title: "Soubai's stories",
-  description: "A Software engineer (interested in cloud computing and distributed systems.) with a passion for building software that improves the world.",
+  metadataBase: siteUrl,
+  title: site.title,
+  description: site.description,
   alternates: {
     types: {
       'application/rss+xml': '/feed.xml',
     },
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    siteName: site.title,
+    title: site.title,
+    description: site.description,
+    images: [
+      {
+        url: defaultOgImage,
+        width: 1080,
+        height: 1080,
+        alt: site.author.name,
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary',
+    site: `@${site.social.twitter}`,
+    creator: `@${site.social.twitter}`,
+    title: site.title,
+    description: site.description,
+    images: [defaultOgImage],
   },
 }
 
