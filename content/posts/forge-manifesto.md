@@ -16,7 +16,7 @@ socialImage: "media/printing-press.jpg"
 
 _Cover art: “The Printer’s Workshop” — Jost Amman, 1568._
 
-Here I am again, writing a manifesto in the age of agents that can generate a whole codebase before I finish my coffee. I know. The internet has enough manifestos. Most of them are written by people who want to sell you a course about how to fire your engineers and replace them with a prompt.
+Here I am again, writing a manifesto in the age of agents that can generate a whole codebase before I’ve finished explaining the problem to myself. I know. The internet has enough manifestos. Most of them read like pitch decks from people selling a course on how to replace your engineers with a prompt.
 
 This is not that.
 
